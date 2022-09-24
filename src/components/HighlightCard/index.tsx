@@ -25,7 +25,7 @@ const icon ={
 
 export function HighlightCard({
     type, 
-    title, 
+    name, 
     amount, 
     lastTransaction} : Props) {
   
@@ -33,7 +33,7 @@ export function HighlightCard({
     <Container type={type}>
 
         <Header>
-            <Title type={type}>{title}</Title>
+            <Title type={type}>{name}</Title>
             <Icon 
               name={icon[type]} 
               type={type}/>

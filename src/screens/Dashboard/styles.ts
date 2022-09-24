@@ -4,7 +4,8 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 import { Feather } from '@expo/vector-icons';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
-import { DataListProps } from './index'
+import { DataListProps } from './index';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
     flex: 1;
@@ -81,11 +82,11 @@ export const Title = styled.Text`
     margin-bottom: 16px;
 `;
 
-export const TransactionList = styled(
-    FlatList as new () => FlatList<DataListProps>
-    ).attrs({
+export const TransactionList = styled(FlatList as new () => FlatList<DataListProps>).attrs({
     showsVerticalScrollIndicator: false,
     contentContainerStyle: {
         paddingBottom: getBottomSpace()
     },
 })``;
+
+export const LogoutButton = styled(BorderlessButton)``;

@@ -1,6 +1,12 @@
+import 'react-native-gesture-handler';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR'
+
 import React from 'react';
+import { StatusBar } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
+import { Routes } from './src/routes/app.routes';
 
 import {
   useFonts,
@@ -10,8 +16,7 @@ import {
 } from '@expo-google-fonts/poppins'
 
 import theme from './src/global/styles/theme';
-import { Dashboard } from './src/screens/Dashboard';
-import  { HighlightCard } from './src/components/HighlightCard/index'
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
 
@@ -27,7 +32,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-        <Dashboard />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </ThemeProvider>
       )
 }
